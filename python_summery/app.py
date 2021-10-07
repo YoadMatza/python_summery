@@ -4,17 +4,6 @@ from flask import Flask, config, render_template, request
 app = Flask(__name__)
 
 
-def get_location():
-    try:
-        response = requests.get(f'http://ip-api.com/json/')
-        geo_data = response.json()
-        city_name = geo_data['city']
-        country_code = geo_data['countryCode']
-        return city_name + ', ' + country_code
-    except:
-        return 'Jerusalem'
-
-
 @app.route('/', methods=['GET', 'POST'])
 def home():
     API_KEY = 'c1cc30025fb6b54818285feab2ece25f'
@@ -22,7 +11,7 @@ def home():
     if request.method == 'POST':
         city_name = request.form['city-name']
     else:
-        city_name = get_location()
+        city_name = "jerusalem"
     daily_source = f'https://api.openweathermap.org/data/2.5/weather?q={city_name}&units=metric&appid={API_KEY}'
     daily_data = requests.get(daily_source).json()
     print(daily_data)
@@ -44,6 +33,8 @@ def home():
         icon_data = daily_data['weather'][0]['icon']
         icon = f'http://openweathermap.org/img/w/{icon_data}.png'
 
+        #today = get_date(datetime_get)
+
     weekly_source = f'https://api.openweathermap.org/data/2.5/onecall?lat={DailyWeather.city_lat}&lon={DailyWeather.city_lon}&units=metric&exclude=current,minutely,hourly,alerts&appid={API_KEY}'
     weekly_data = requests.get(weekly_source).json()
 
@@ -56,7 +47,7 @@ def home():
                  }
         weather_data.update(dict1)
         i += 1
-
+    print(weather_data)
     return render_template('home.html', DailyWeather=DailyWeather, WeeklyWeather=weather_data)
 
 
