@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    height: 75vh;
+    background: url('../images/osen-listia-fon-colorful-background-autumn-leaves-osennie-26.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: darken;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: blancmange;
+    font-weight: bold;
+    color: darken;
+}
+
+.material-icons {
+    size: 2px;
+}
+
+p {
+    font-style: italic;
+    font-size: 20px;
+}
+.cen {
+    display: flex
+    flex-flow: row wrap
+    max-width: 350px;
+    margin: 100 auto;
+    border-radius: 15px;
+    background-color: seashell;
+    opacity: 0.7;
+    padding: 20px 100px;
+    line-height: 200%;
+}
+
+.text-input {
+    font-family: 'Roboto', sans-serif;
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 13px;
+    border: 2px solid rgb(17, 67, 103);
+    border-radius: 4px;
+}
+
+.search-button {
+    font-family: 'Roboto', sans-serif;
+    background: #6b4a18;
+    padding: 10px 20px 10px 20px;
+    border: 5px solid;
+    border-radius: 5px;
+    margin: auto;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    color: #e2ce20;
+    margin-bottom: 50px;
+}
+
+.search-button:hover {
+    background: #72a8a8;
+    text-decoration: none;
+}
+
+.main-content div {
+    margin: 1rem;
+}
+
+
+.main-content span {
+    margin: 1rem;
+    font-size: 10px;
+}
+
+.detail-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail-content div {
+    margin: 0.5rem;
+}
+
+.detail-content p {
+    font-size: 8px;
+}
+
+.vertical-line {
+    border-left: 1px solid darkcyan;
+}
+
+.detail-content span {
+    font-size: 9px;
+}
+
+h4 {
+    margin: 0px;
+
+}
+
+
+.detail-content {
+    text-align: center;
+    margin: 1rem;
+}
+
+
+
+hr {
+    margin: 1rem;
+    width: 100%;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+       <link href="//fonts.googleapis.com/css?family=ABeeZee&subset=latin" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Roboto:ital,wght@0,100;1,400&display=swap" rel="stylesheet">
+        <title>Weather App</title>
+</head>
+<body>
+<div class="cen">
+    <p id = "main_tittle">Enter the city name (and country code after city name with a coma to get better results (ie: Dublin, IE))</p>
+
+    <form id="standard" method="POST">
+        <input type="search" class="text-input" name="city-name" placeholder="&#128269 Dublin, IE">
+        <button type="submit" class="search-button">Submit</button>
+    </form>
+</div>
+<hr>
+<div class="main-content">
+    <div class="today-date">
+        <p>{{DailyWeather.today}}</p>
+    </div>
+    <div class="current-city">
+        <h3>{{DailyWeather.city}}, {{DailyWeather.country}}</h3>
+    </div>
+
+    <div class="current-temp">
+        <h3>{{DailyWeather.temp}}°c</h3>
+        <img src="{{DailyWeather.icon}}" alt="Weather Condition Icon">
+
+    </div>
+    <div class="main-details">
+        <span>Wind: {{DailyWeather.wind}} km/h</span>
+        <!-- <span>Pressure: {{pressure}} mb</span> -->
+        <span>Humidity: {{DailyWeather.humidity}} %</span>
+    </div>
+    <div class="current-temp_feels">Feels Like: {{DailyWeather.temp_feels}}°c</div>
+
+    <div class="current-details">
+        <span>Min Temp: {{DailyWeather.temp_min}}°c</span>
+        <span>Max Temp: {{DailyWeather.temp_max}}°c</span>
+    </div>
+</div>
+
+<hr>
+
+<div class="next-days">The Following 7 Days</div>
+
+<div class="detail-content">
+    <div class="day1">
+        <div class="core-details">
+            <p>{{WeeklyWeather.1.day}}°c</p>
+            <h4>{{WeeklyWeather.1.night}}°c</h4>
+        </div>
+        <div class="other-details">
+            <span>H:{{WeeklyWeather.1.humidity}} %</span>
+        </div>
+    </div>
+
+    <div class="vertical-line"></div>
+
+    <div class="day2">
+        <div class="core-details">
+            <p>{{WeeklyWeather.2.day}}°c</p>
+            <h4>{{WeeklyWeather.2.night}}°c</h4>
+        </div>
+        <div class="other-details">
+            <span>H:{{WeeklyWeather.2.humidity}} %</span>
+        </div>
+    </div>
+
+    <div class="vertical-line"></div>
+
+    <div class="day3">
+        <div class="core-details">
+            <p>{{WeeklyWeather.3.day}}°c</p>
+            <h4>{{WeeklyWeather.3.night}}°c</h4>
+        </div>
+        <div class="other-details">
+            <span>H:{{WeeklyWeather.3.humidity}} %</span>
+        </div>
+    </div>
+
+    <div class="vertical-line"></div>
+
+    <div class="day4">
+        <div class="core-details">
+            <p>{{WeeklyWeather.4.day}}°c</p>
+            <h4>{{WeeklyWeather.4.night}}°c</h4>
+        </div>
+        <div class="other-details">
+            <span>H:{{WeeklyWeather.4.humidity}} %</span>
+        </div>
+    </div>
+
+    <div class="vertical-line"></div>
+    <div class="day5">
+        <div class="core-details">
+            <p>{{WeeklyWeather.5.day}}°c</p>
+            <h4>{{WeeklyWeather.5.night}}°c</h4>
+        </div>
+        <div class="other-details">
+            <span>H:{{WeeklyWeather.5.humidity}} %</span>
+        </div>
+    </div>
+
+    <div class="vertical-line"></div>
+
+    <div class="day6">
+        <div class="core-details">
+            <p>{{WeeklyWeather.6.day}}°c</p>
+            <h4>{{WeeklyWeather.6.night}}°c</h4>
+        </div>
+        <div class="other-details">
+           <span>H:{{WeeklyWeather.6.humidity}} %</span>
+        </div>
+    </div>
+
+    <div class="vertical-line"></div>
+
+    <div class="day7">
+        <div class="core-details">
+            <p>{{WeeklyWeather.7.day}}°c</p>
+            <h4>{{WeeklyWeather.7.night}}°c</h4>
+        </div>
+        <div class="other-details">
+            <span>H:{{WeeklyWeather.7.humidity}} %</span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
