@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=ABeeZee&subset=latin" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Roboto:ital,wght@0,100;1,400&display=swap" rel="stylesheet">
@@ -43,88 +43,75 @@
 
     <h1 class="current-temp_feels">Feels Like: {{DailyWeather.temp_feels}}°c</h1>
 
-    <div class="current-details">
+    <div class="main-details">
         <h3>Min Temp: {{DailyWeather.temp_min}}°c</h3>
         <h3>Max Temp: {{DailyWeather.temp_max}}°c</h3>
     </div>
   </div>
 </div>
 
-<div class="next-days">What`s Next...</div>
+<p class="next-days">What`s Next...</p>
 <container class="detail-content" target="_blank">
-    <div class="day1">
-        <div class="core-details">
-             <p>{{WeeklyWeather.1.date}}</p>
-            <h4>N:{{WeeklyWeather.1.night}}°c</h4>
-            <p>D:{{WeeklyWeather.1.day}}°c</p>
-            <h4>H:{{WeeklyWeather.1.humidity}} %</h4>
-        </div>
+
+    <div id="day1" class="core-details">
+            <h4>{{WeeklyWeather.1.date}}</h4>
+            <p>N:{{WeeklyWeather.1.night}}°c</p>
+            <h4>D:{{WeeklyWeather.1.day}}°c</h4>
+            <p>H:{{WeeklyWeather.1.humidity}} %</p>
     </div>
 
     <div class="vertical-line"></div>
 
-    <div class="day2">
-        <div class="core-details">
-            <p>{{WeeklyWeather.2.date}}</p>
-            <h4>N:{{WeeklyWeather.2.night}}°c</h4>
-            <p>D:{{WeeklyWeather.2.day}}°c</p>
-            <h4>H:{{WeeklyWeather.2.humidity}} %</h4>
-        </div>
+    <div id="day2" class="core-details">
+            <h4>{{WeeklyWeather.2.date}}</h4>
+            <p>N:{{WeeklyWeather.2.night}}°c</p>
+            <h4>D:{{WeeklyWeather.2.day}}°c</h4>
+            <p>H:{{WeeklyWeather.2.humidity}} %</p>
     </div>
 
     <div class="vertical-line"></div>
 
-    <div class="day3">
-        <div class="core-details">
-            <p>{{WeeklyWeather.3.date}}</p>
-            <h4>N:{{WeeklyWeather.3.night}}°c</h4>
-            <p>D:{{WeeklyWeather.3.day}}°c</p>
-            <h4>H:{{WeeklyWeather.3.humidity}} %</h4>
-        </div>
+    <div id="day3" class="core-details">
+            <h4>{{WeeklyWeather.3.date}}</h4>
+            <p>N:{{WeeklyWeather.3.night}}°c</p>
+            <h4>D:{{WeeklyWeather.3.day}}°c</h4>
+            <p>H:{{WeeklyWeather.3.humidity}} %</p>
     </div>
 
     <div class="vertical-line"></div>
 
-    <div class="day4">
-        <div class="core-details">
-            <p>{{WeeklyWeather.4.date}}</p>
-            <h4>N:{{WeeklyWeather.4.night}}°c</h4>
-            <p>D:{{WeeklyWeather.4.day}}°c</p>
-            <h4>H:{{WeeklyWeather.4.humidity}} %</h4>
-        </div>
+    <div id="day4" class="core-details">
+            <h4>{{WeeklyWeather.4.date}}</h4>
+            <p>N:{{WeeklyWeather.4.night}}°c</p>
+            <h4>D:{{WeeklyWeather.4.day}}°c</h4>
+            <p>H:{{WeeklyWeather.4.humidity}} %</p>
     </div>
 
     <div class="vertical-line"></div>
 
-    <div class="day5">
-        <div class="core-details">
-            <p>{{WeeklyWeather.5.date}}</p>
-            <h4>N:{{WeeklyWeather.5.night}}°c</h4>
-            <p>D:{{WeeklyWeather.5.day}}°c</p>
-            <h4>H:{{WeeklyWeather.5.humidity}} %</h4>
-        </div>
+    <div id="day5" class="core-details">
+            <h4>{{WeeklyWeather.5.date}}</h4>
+            <p>N:{{WeeklyWeather.5.night}}°c</p>
+            <h4>D:{{WeeklyWeather.5.day}}°c</h4>
+            <p>H:{{WeeklyWeather.5.humidity}} %</p>
     </div>
 
     <div class="vertical-line"></div>
 
-    <div class="day6">
-        <div class="core-details">
-            <p>{{WeeklyWeather.6.date}}</p>
-            <h4>N:{{WeeklyWeather.6.night}}°c</h4>
-            <p>D:{{WeeklyWeather.6.day}}°c</p>
-            <h4>H:{{WeeklyWeather.6.humidity}} %</h4>
-        </div>
+    <div id="day6" class="core-details">
+            <h4>{{WeeklyWeather.6.date}}</h4>
+            <p>N:{{WeeklyWeather.6.night}}°c</p>
+            <h4>D:{{WeeklyWeather.6.day}}°c</h4>
+            <p>H:{{WeeklyWeather.6.humidity}} %</p>
     </div>
 
     <div class="vertical-line"></div>
 
-    <div class="day7">
-        <div class="core-details">
-            <p>{{WeeklyWeather.7.date}}</p>
-            <h4>N:{{WeeklyWeather.7.night}}°c</h4>
-            <p>D:{{WeeklyWeather.7.day}}°c</p>
-            <h4>H:{{WeeklyWeather.7.humidity}} %</h4>
-        </div>
+    <div id="day7" class="core-details">
+            <h4>{{WeeklyWeather.7.date}}</h4>
+            <p>N:{{WeeklyWeather.7.night}}°c</p>
+            <h4>D:{{WeeklyWeather.7.day}}°c</h4>
+            <p>H:{{WeeklyWeather.7.humidity}} %</p>
     </div>
 </container>
 </body>
