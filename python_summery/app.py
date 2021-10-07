@@ -53,14 +53,15 @@ def home():
 
     weekly_source = f'https://api.openweathermap.org/data/2.5/onecall?lat={DailyWeather.city_lat}&lon={DailyWeather.city_lon}&units=metric&exclude=current,minutely,hourly,alerts&appid={API_KEY}'
     weekly_data = requests.get(weekly_source).json()
-    s = str(datetime.today().date())
+    s = str(now.strftime("%d/%m/%Y"))
     print(s)
-    date = datetime.strptime(s, "%Y-%m-%d").date()
+    date = datetime.strptime(s, '%d/%m/%Y').date()
+    print(date)
     weather_data = {}
     i = 0
     while i <= 7:
         modified_date = date + timedelta(days=i)
-        datetime.strftime(modified_date, "%Y/%m/%d")
+        datetime.strftime(modified_date, '%d/%m/%Y')
         dict1 = {i: {'day': weekly_data['daily'][i]['temp']['day'], 'night': weekly_data['daily'][i]['temp']['night'],
                      'weather': weekly_data['daily'][i]['weather'][0]['description'],
                      'humidity': weekly_data['daily'][i]['humidity'], 'date': modified_date},
