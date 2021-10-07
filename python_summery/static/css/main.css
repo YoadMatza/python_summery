@@ -85,10 +85,9 @@ button {
 .detail-content {
     display: flex;
     flex-wrap: wrap;
-}
-
-.detail-content{
     margin: 0.5rem;
+    text-align: center;
+    margin: 1rem;
 }
 
 .core-details{
@@ -100,13 +99,6 @@ button {
 
 .vertical-line {
     border-left: 1px solid darkcyan;
-}
-
-
-
-.detail-content {
-    text-align: center;
-    margin: 1rem;
 }
 
 hr {
