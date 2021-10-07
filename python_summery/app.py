@@ -3,6 +3,16 @@ from flask import Flask, config, render_template, request
 
 app = Flask(__name__)
 
+def get_location():
+    try:
+        response = requests.get(f'http://ip-api.com/json/')
+        geo_data = response.json()
+        city_name = geo_data['city']
+        country_code = geo_data['countryCode']
+        return city_name + ', ' + country_code
+    except:
+        return 'Jerusalem'
+
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -11,7 +21,7 @@ def home():
     if request.method == 'POST':
         city_name = request.form['city-name']
     else:
-        city_name = "jerusalem"
+        city_name = get_location()
     daily_source = f'https://api.openweathermap.org/data/2.5/weather?q={city_name}&units=metric&appid={API_KEY}'
     daily_data = requests.get(daily_source).json()
     print(daily_data)
