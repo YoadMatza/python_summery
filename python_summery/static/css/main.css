@@ -4,7 +4,6 @@ body {
     background: url('../images/osen-listia-fon-colorful-background-autumn-leaves-osennie-26.jpg') no-repeat center center fixed;
     background-size: cover;
     color: darken;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
     text-align: center;
 }
@@ -63,8 +62,11 @@ p {
     text-decoration: none;
 }
 
-.main-content div {
+.main-content {
     margin: 1rem;
+    font-family: 'Lora', serif;
+     line-height: 200%;
+
 }
 
 
