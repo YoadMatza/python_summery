@@ -15,7 +15,6 @@
 <body>
 <div class="cen">
     <p id = "main_tittle">Enter the city name (country code optional) </p>
-
     <form id="standard" method="POST">
         <input type="search" class="text-input" name="city-name" placeholder="&#128269 Tel Aviv, IL">
         <button type="submit" class="search-button">Submit</button>
@@ -35,7 +34,7 @@
         <h3>{{DailyWeather.temp}}°c</h3>
         <img src="{{DailyWeather.icon}}" alt="Weather Condition Icon">
     </div>
-
+<container class = 'day_weather'>
     <div class="main-details">
         <span>Wind: {{DailyWeather.wind}} km/h</span>
         <!-- <span>Pressure: {{pressure}} mb</span> -->
@@ -48,17 +47,17 @@
         <span>Min Temp: {{DailyWeather.temp_min}}°c</span>
         <span>Max Temp: {{DailyWeather.temp_max}}°c</span>
     </div>
+  </container>
 </div>
 
 <div class="next-days">What`s Next...</div>
 <div class="detail-content">
     <div class="day1">
         <div class="core-details">
-            <p>{{WeeklyWeather.1.day}}°c</p>
-                <h4>{{WeeklyWeather.1.night}}°c</h4>
-        </div>
-        <div class="other-details">
-            <span>H:{{WeeklyWeather.1.humidity}} %</span>
+             <p>{{WeeklyWeather.1.date}}</p>
+            <h4>N:{{WeeklyWeather.1.night}}°c</h4>
+            <p>D:{{WeeklyWeather.1.day}}°c</p>
+            <h4>H:{{WeeklyWeather.1.humidity}} %</h4>
         </div>
     </div>
 
@@ -66,11 +65,10 @@
 
     <div class="day2">
         <div class="core-details">
-            <p>{{WeeklyWeather.2.day}}°c</p>
-            <h4>{{WeeklyWeather.2.night}}°c</h4>
-        </div>
-        <div class="other-details">
-            <span>H:{{WeeklyWeather.2.humidity}} %</span>
+            <p>{{WeeklyWeather.2.date}}</p>
+            <h4>N:{{WeeklyWeather.2.night}}°c</h4>
+            <p>D:{{WeeklyWeather.2.day}}°c</p>
+            <h4>H:{{WeeklyWeather.2.humidity}} %</h4>
         </div>
     </div>
 
@@ -78,11 +76,10 @@
 
     <div class="day3">
         <div class="core-details">
-            <p>{{WeeklyWeather.3.day}}°c</p>
-            <h4>{{WeeklyWeather.3.night}}°c</h4>
-        </div>
-        <div class="other-details">
-            <span>H:{{WeeklyWeather.3.humidity}} %</span>
+            <p>{{WeeklyWeather.3.date}}</p>
+            <h4>N:{{WeeklyWeather.3.night}}°c</h4>
+            <p>D:{{WeeklyWeather.3.day}}°c</p>
+            <h4>H:{{WeeklyWeather.3.humidity}} %</h4>
         </div>
     </div>
 
@@ -90,11 +87,10 @@
 
     <div class="day4">
         <div class="core-details">
-            <p>{{WeeklyWeather.4.day}}°c</p>
-            <h4>{{WeeklyWeather.4.night}}°c</h4>
-        </div>
-        <div class="other-details">
-            <span>H:{{WeeklyWeather.4.humidity}} %</span>
+            <p>{{WeeklyWeather.4.date}}</p>
+            <h4>N:{{WeeklyWeather.4.night}}°c</h4>
+            <p>D:{{WeeklyWeather.4.day}}°c</p>
+            <h4>H:{{WeeklyWeather.4.humidity}} %</h4>
         </div>
     </div>
 
@@ -102,11 +98,10 @@
 
     <div class="day5">
         <div class="core-details">
-            <p>{{WeeklyWeather.5.day}}°c</p>
-            <h4>{{WeeklyWeather.5.night}}°c</h4>
-        </div>
-        <div class="other-details">
-            <span>H:{{WeeklyWeather.5.humidity}} %</span>
+            <p>{{WeeklyWeather.5.date}}</p>
+            <h4>N:{{WeeklyWeather.5.night}}°c</h4>
+            <p>D:{{WeeklyWeather.5.day}}°c</p>
+            <h4>H:{{WeeklyWeather.5.humidity}} %</h4>
         </div>
     </div>
 
@@ -114,11 +109,10 @@
 
     <div class="day6">
         <div class="core-details">
-            <p>{{WeeklyWeather.6.day}}°c</p>
-            <h4>{{WeeklyWeather.6.night}}°c</h4>
-        </div>
-        <div class="other-details">
-           <span>H:{{WeeklyWeather.6.humidity}} %</span>
+            <p>{{WeeklyWeather.6.date}}</p>
+            <h4>N:{{WeeklyWeather.6.night}}°c</h4>
+            <p>D:{{WeeklyWeather.6.day}}°c</p>
+            <h4>H:{{WeeklyWeather.6.humidity}} %</h4>
         </div>
     </div>
 
@@ -126,11 +120,10 @@
 
     <div class="day7">
         <div class="core-details">
-            <p>{{WeeklyWeather.7.day}}°c</p>
-            <h4>{{WeeklyWeather.7.night}}°c</h4>
-        </div>
-        <div class="other-details">
-            <span>H:{{WeeklyWeather.7.humidity}} %</span>
+            <p>{{WeeklyWeather.7.date}}</p>
+            <h4>N:{{WeeklyWeather.7.night}}°c</h4>
+            <p>D:{{WeeklyWeather.7.day}}°c</p>
+            <h4>H:{{WeeklyWeather.7.humidity}} %</h4>
         </div>
     </div>
 
