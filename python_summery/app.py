@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import requests
 from flask import Flask, config, render_template, request
 
@@ -50,13 +50,14 @@ def home():
 
     weekly_source = f'https://api.openweathermap.org/data/2.5/onecall?lat={DailyWeather.city_lat}&lon={DailyWeather.city_lon}&units=metric&exclude=current,minutely,hourly,alerts&appid={API_KEY}'
     weekly_data = requests.get(weekly_source).json()
-
+    date = datetime.today()
     weather_data = {}
     i = 0
     while i <= 7:
+        modified_date = date + timedelta(days=i)
         dict1 = {i: {'day': weekly_data['daily'][i]['temp']['day'], 'night': weekly_data['daily'][i]['temp']['night'],
                      'weather': weekly_data['daily'][i]['weather'][0]['description'],
-                     'humidity': weekly_data['daily'][i]['humidity']},
+                     'humidity': weekly_data['daily'][i]['humidity'], 'date': modified_date},
                  }
         weather_data.update(dict1)
         i += 1
