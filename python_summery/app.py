@@ -61,9 +61,7 @@ def home():
         weekly_data = requests.get(weekly_source).json()
 
         s = str(now.strftime("%d/%m/%Y"))
-        print(s)
         date = datetime.strptime(s, '%d/%m/%Y').date()
-        print(date)
         weather_data = {}
         i = 0
         while i <= 7:
@@ -75,7 +73,6 @@ def home():
                      }
             weather_data.update(dict1)
             i += 1
-        print(weather_data)
         return render_template('home.html', date_time=date_time, DailyWeather=DailyWeather, WeeklyWeather=weather_data)
 
     return error_handler(daily_data, API_KEY, exception_dict, now, date_time)
@@ -103,9 +100,7 @@ def error_handler(daily_data, API_KEY, exception_dict, now, date_time):
     weekly_data = requests.get(weekly_source).json()
 
     s = str(now.strftime("%d/%m/%Y"))
-    print(s)
     date = datetime.strptime(s, '%d/%m/%Y').date()
-    print(date)
     weather_data = {}
     i = 0
     while i <= 7:
@@ -117,7 +112,6 @@ def error_handler(daily_data, API_KEY, exception_dict, now, date_time):
                  }
         weather_data.update(dict1)
         i += 1
-    print(weather_data)
     return render_template('home.html', date_time=date_time, DailyWeather=DailyWeather, WeeklyWeather=weather_data)
 
 
