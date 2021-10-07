@@ -1,5 +1,7 @@
+from datetime import datetime
 import requests
 from flask import Flask, config, render_template, request
+
 
 app = Flask(__name__)
 
@@ -15,6 +17,8 @@ def home():
     daily_source = f'https://api.openweathermap.org/data/2.5/weather?q={city_name}&units=metric&appid={API_KEY}'
     daily_data = requests.get(daily_source).json()
     print(daily_data)
+    now = datetime.now()  # current date and time
+    date_time = now.strftime("%d/%m/%Y, %H:%M")
 
     class DailyWeather:
         city = daily_data['name']
@@ -48,7 +52,7 @@ def home():
         weather_data.update(dict1)
         i += 1
     print(weather_data)
-    return render_template('home.html', DailyWeather=DailyWeather, WeeklyWeather=weather_data)
+    return render_template('home.html', date_time=date_time, DailyWeather=DailyWeather, WeeklyWeather=weather_data)
 
 
 if __name__ == '__main__':
