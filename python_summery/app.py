@@ -3,6 +3,7 @@ from flask import Flask, config, render_template, request
 
 app = Flask(__name__)
 
+
 def get_location():
     try:
         response = requests.get(f'http://ip-api.com/json/')
@@ -42,8 +43,6 @@ def home():
         desc = daily_data['weather'][0]['description']
         icon_data = daily_data['weather'][0]['icon']
         icon = f'http://openweathermap.org/img/w/{icon_data}.png'
-
-        #today = get_date(datetime_get)
 
     weekly_source = f'https://api.openweathermap.org/data/2.5/onecall?lat={DailyWeather.city_lat}&lon={DailyWeather.city_lon}&units=metric&exclude=current,minutely,hourly,alerts&appid={API_KEY}'
     weekly_data = requests.get(weekly_source).json()
