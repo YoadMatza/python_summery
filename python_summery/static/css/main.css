@@ -15,7 +15,7 @@ button {
 }
 
 .material-icons {
-    size: 2px;
+    size: 10px;
 }
 
 .cen {
@@ -67,33 +67,42 @@ button {
     opacity: 0.7;
     padding: 20px 100px;
    }
-
+.today-date{
+    font-size: 20px
+}
 .day-weather {
    display: flex;
-   flex-direction: column;
    justify-content: space-between;
-   flex: 2 auto;
+   flex: 10px;
    text-align: center;
-   margin: auto 16px;
+   margin: 16px;
 }
 
 .main-content{
     margin: 1rem;
     font-size: 10px;
+
+}
+.current-temp{
+    font-size:30px
+}
+.next-days{
+    font-size: 20px
+    font-family: 'Bebas Neue', cursive;
 }
 
+
 .detail-content {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0.5rem;
-    text-align: center;
-    margin: 1rem;
+   display: flex;
+   justify-content: space-between;
+  text-align: center;
+   margin: 16px;
+   background-color: seashell;
+   opacity: 0.8;
 }
 
 .core-details{
     font-size: 15px;
-    background-color: seashell;
-    opacity: 0.7;
     border-radius: 15px;
 }
 

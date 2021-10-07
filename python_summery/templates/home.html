@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=ABeeZee&subset=latin" rel="stylesheet" type="text/css">
@@ -23,10 +24,8 @@
 
 <div class="main-content">
     <div class="today-date">
-       <p>{{ date_time }}</p>
+        <p>{{ date_time }}</p>
         <p>{{DailyWeather.today}}</p>
-    </div>
-    <div class="current-city">
         <h3>{{DailyWeather.city}}, {{DailyWeather.country}}</h3>
     </div>
 
@@ -34,24 +33,25 @@
         <h3 >{{DailyWeather.temp}}°c</h3>
         <img src="{{DailyWeather.icon}}" alt="Weather Condition Icon">
     </div>
-<container class = 'day_weather'>
+
+<div class = 'day_weather'>
     <div class="main-details">
-        <span>Wind: {{DailyWeather.wind}} km/h</span>
+        <h3>Wind: {{DailyWeather.wind}} km/h</h3>
         <!-- <span>Pressure: {{pressure}} mb</span> -->
-        <span>Humidity: {{DailyWeather.humidity}} %</span>
+        <h3>Humidity: {{DailyWeather.humidity}} %</h3>
     </div>
 
-    <div class="current-temp_feels">Feels Like: {{DailyWeather.temp_feels}}°c</div>
+    <h1 class="current-temp_feels">Feels Like: {{DailyWeather.temp_feels}}°c</h1>
 
     <div class="current-details">
-        <span>Min Temp: {{DailyWeather.temp_min}}°c</span>
-        <span>Max Temp: {{DailyWeather.temp_max}}°c</span>
+        <h3>Min Temp: {{DailyWeather.temp_min}}°c</h3>
+        <h3>Max Temp: {{DailyWeather.temp_max}}°c</h3>
     </div>
-  </container>
+  </div>
 </div>
 
 <div class="next-days">What`s Next...</div>
-<div class="detail-content">
+<container class="detail-content" target="_blank">
     <div class="day1">
         <div class="core-details">
              <p>{{WeeklyWeather.1.date}}</p>
@@ -126,6 +126,6 @@
             <h4>H:{{WeeklyWeather.7.humidity}} %</h4>
         </div>
     </div>
-</div>
+</container>
 </body>
 </html>

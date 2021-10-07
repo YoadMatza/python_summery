@@ -17,7 +17,6 @@ def get_location():
     except:
         return 'Jerusalem'
 
-
 @app.route('/', methods=['GET', 'POST'])
 def home():
     config = configparser.ConfigParser()
@@ -32,7 +31,7 @@ def home():
     daily_data = requests.get(daily_source).json()
     print(daily_data)
     now = datetime.now()  # current date and time
-    date_time = now.strftime("%d/%m/%Y, %H:%M")
+    date_time = now.strftime("%d-%m-%Y, %H:%M")
 
     class DailyWeather:
         city = daily_data['name']
