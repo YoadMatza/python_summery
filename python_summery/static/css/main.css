@@ -1,10 +1,8 @@
 body {
-    height: 75vh;
-    background: url('../images/osen-listia-fon-colorful-background-autumn-leaves-osennie-26.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: darken;
-    font-size: 20px;
 
+    background: url('../images/i.gif') no-repeat center;
+    background-size: cover;
+    font-size: 20px;
 }
 
 button {
