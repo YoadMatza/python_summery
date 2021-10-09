@@ -19,8 +19,7 @@ button {
     border-radius: 15px;
     background-color: lavender;
     opacity: 0.7;
-    font-family: 'Roboto', sans-serif;
-    line-height: 200%;
+    font-family: 'Monoton', cursive;
     text-align: center;
     font-size: 20px;
 }
@@ -35,7 +34,7 @@ button {
 }
 
 .search-button {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Monoton', cursive;
     background: #6b4a18;
     padding: 10px 20px 10px 20px;
     border: 5px solid;
@@ -109,6 +108,8 @@ h4{
    background-color: lightgrey;
    opacity: 0.8;
    margin: 10px
+   text-align: center;
+   padding: 0px 20px 0px 20px;
 }
 
 .core-details{
@@ -123,5 +124,7 @@ h4{
 }
 
 .main-details{
+    display: flex;
+    justify-content: space-between;
     font-size: 15px
 }
