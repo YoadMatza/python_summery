@@ -20,7 +20,7 @@
         <button type="submit" class="search-button">Submit</button>
     </form>
 </div>
-
+<h4 class="next-days">For Now: </h4>
 <div class="main-content">
     <div class="today-date">
         <p>{{ date_time }}</p>
@@ -33,23 +33,23 @@
         <img src="{{DailyWeather.icon}}" alt="Weather Condition Icon">
     </div>
 
-<div class = 'day_weather'>
-    <div class="main-details">
-        <h3>Wind: {{DailyWeather.wind}} km/h</h3>
+    <div class = 'day_weather'>
+         <div class="main-details">
+             <h3><b>Wind:</b> {{DailyWeather.wind}} km/h</h3>
         <!-- <span>Pressure: {{pressure}} mb</span> -->
-        <h3>Humidity: {{DailyWeather.humidity}} %</h3>
-    </div>
+             <h3><b>Humidity:</b> {{DailyWeather.humidity}} %</h3>
+         </div>
 
-    <h1 class="current-temp_feels">Feels Like: {{DailyWeather.temp_feels}}°c</h1>
+    <h1 class="current-temp_feels"><b>Feels Like:</b> {{DailyWeather.temp_feels}}°c</h1>
 
     <div class="main-details">
-        <h3>Min Temp: {{DailyWeather.temp_min}}°c</h3>
-        <h3>Max Temp: {{DailyWeather.temp_max}}°c</h3>
+        <h3><b>Min Temp:</b> {{DailyWeather.temp_min}}°c</h3>
+        <h3><b>Max Temp: </b>{{DailyWeather.temp_max}}°c</h3>
     </div>
   </div>
 </div>
 
-<p class="next-days">What`s Next...</p>
+<h4 class="next-days">What`s Next...</h4>
 <container class="detail-content" target="_blank">
 
     <div id="day1" class="core-details">
