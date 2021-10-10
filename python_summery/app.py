@@ -37,25 +37,24 @@ def home():
     now = datetime.now()  # current date and time
     date_time = now.strftime("%d/%m/%Y, %H:%M")
 
-    class DailyWeather:
-        if daily_data['cod'] == 200:
-            city = daily_data['name']
-            country = daily_data['sys']['country']
-            temp = "{:.1f}".format(int(daily_data['main']['temp']))
-            temp_feels = "{:.1f}".format(int(daily_data['main']['feels_like']))
-            wind = "{:.1f}".format(daily_data['wind']['speed'] * 3.6)
-            humidity = daily_data['main']['humidity']
-            temp_max = "{:.1f}".format(int(daily_data['main']['temp_max']))
-            temp_min = "{:.1f}".format(int(daily_data['main']['temp_min']))
-            city_lon = daily_data['coord']['lon']
-            city_lat = daily_data['coord']['lat']
-            datetime_get = daily_data['dt']
-            short_desc = daily_data['weather'][0]['main']
-            desc = daily_data['weather'][0]['description']
-            icon_data = daily_data['weather'][0]['icon']
-            icon = f'http://openweathermap.org/img/w/{icon_data}.png'
-
     if daily_data['cod'] == 200:
+        class DailyWeather:
+                city = daily_data['name']
+                country = daily_data['sys']['country']
+                temp = "{:.1f}".format(int(daily_data['main']['temp']))
+                temp_feels = "{:.1f}".format(int(daily_data['main']['feels_like']))
+                wind = "{:.1f}".format(daily_data['wind']['speed'] * 3.6)
+                humidity = daily_data['main']['humidity']
+                temp_max = "{:.1f}".format(int(daily_data['main']['temp_max']))
+                temp_min = "{:.1f}".format(int(daily_data['main']['temp_min']))
+                city_lon = daily_data['coord']['lon']
+                city_lat = daily_data['coord']['lat']
+                datetime_get = daily_data['dt']
+                short_desc = daily_data['weather'][0]['main']
+                desc = daily_data['weather'][0]['description']
+                icon_data = daily_data['weather'][0]['icon']
+                icon = f'http://openweathermap.org/img/w/{icon_data}.png'
+
         weekly_source = f'https://api.openweathermap.org/data/2.5/onecall?lat' \
                         f'={DailyWeather.city_lat}&lon={DailyWeather.city_lon}&units=metric&exclude=current,minutely,hourly,alerts&appid={API_KEY}'
         weekly_data = requests.get(weekly_source).json()
@@ -76,6 +75,7 @@ def home():
         return render_template('home.html', date_time=date_time, DailyWeather=DailyWeather, WeeklyWeather=weather_data)
 
     return error_handler(daily_data, API_KEY, exception_dict, now, date_time)
+
 
 @app.route('/error')
 def error_handler(daily_data, API_KEY, exception_dict, now, date_time):
@@ -116,4 +116,4 @@ def error_handler(daily_data, API_KEY, exception_dict, now, date_time):
 
 
 if __name__ == '__main__':
-    app.run(debug=False,host='0.0.0.0')
+    app.run(debug=False, host='0.0.0.0')
