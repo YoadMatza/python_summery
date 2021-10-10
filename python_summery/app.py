@@ -3,7 +3,6 @@ import configparser
 import requests
 from flask import Flask, render_template, request
 
-
 app = Flask(__name__)
 
 
@@ -32,7 +31,7 @@ def home():
     daily_data = requests.get(daily_source).json()
 
     exception_dict = {400: "Please insert a city name", 401: "API key error", 404: "City not found",
-                            429: "Too many requests"}
+                      429: "Too many requests"}
 
     now = datetime.now()  # current date and time
     date_time = now.strftime("%d/%m/%Y, %H:%M")
@@ -66,10 +65,11 @@ def home():
         while i <= 7:
             modified_date = date + timedelta(days=i)
             datetime.strftime(modified_date, '%d/%m/%Y')
-            dict1 = {i: {'day': weekly_data['daily'][i]['temp']['day'], 'night': weekly_data['daily'][i]['temp']['night'],
-                         'weather': weekly_data['daily'][i]['weather'][0]['description'],
-                         'humidity': weekly_data['daily'][i]['humidity'], 'date': modified_date},
-                     }
+            dict1 = {
+                i: {'day': weekly_data['daily'][i]['temp']['day'], 'night': weekly_data['daily'][i]['temp']['night'],
+                    'weather': weekly_data['daily'][i]['weather'][0]['description'],
+                    'humidity': weekly_data['daily'][i]['humidity'], 'date': modified_date},
+                }
             weather_data.update(dict1)
             i += 1
         return render_template('home.html', date_time=date_time, DailyWeather=DailyWeather, WeeklyWeather=weather_data)
@@ -95,6 +95,7 @@ def error_handler(daily_data, API_KEY, exception_dict, now, date_time):
         desc = "---"
         icon_data = "bla bla bla"
         icon = f'static/images/exception_img.png'
+
     weekly_source = f'https://api.openweathermap.org/data/2.5/onecall?lat' \
                     f'={DailyWeather.city_lat}&lon={DailyWeather.city_lon}&units=metric&exclude=current,minutely,hourly,alerts&appid={API_KEY}'
     weekly_data = requests.get(weekly_source).json()
